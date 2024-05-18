@@ -82,7 +82,7 @@
     }
 
     :root {
-        --body-bg: rgb(203, 204, 204);
+        --body-bg: rgb(204, 204, 204);
         --white: #ffffff;
         --darkWhite: #ccc;
         --black: #000000;
@@ -133,16 +133,6 @@
     color: #000;
     }
 
-    /* .whatsapp-this{
-      display: flex;
-      justify-content: center;
-      cursor: pointer;
-      padding: 4px 0px;
-    }
-
-    .whatsapp-this:hover{
-      background-color: rgb(255 255 255 / 0.21);
-    } */
 
     .submitShareEmailBtn {
         background: #192d3e;
@@ -169,7 +159,7 @@
     }
 
     .arrow {
-        /* font-size: 0.6em; */
+        
         cursor: pointer;
         margin-left: 5px;
     }
@@ -178,7 +168,7 @@
         transform: rotate(180deg);
     }
     .inputdate::-webkit-calendar-picker-indicator {
-        filter: invert(1); /* Invert the color of the calendar icon */
+        filter: invert(1); 
       }
       
 </style>
@@ -221,10 +211,8 @@
                                         <select name="status" id="salesStatus" class="form-control" style="background:black;color:white;">
                                             <option value="all">All</option>
                                             <option value="Draft" {% if status_filter == 0 %} selected {% endif %}>Draft</option>
-                                            <!-- <option value="Not paid" {% if status_filter == "Not paid" %} selected {% endif %}>Not paid</option> -->
                                             <option value="Sent" {% if status_filter == 1 %} selected {% endif %}>Sent</option>
-                                            <!-- <option value="partially paid" {% if status_filter == "partially paid" %} selected {% endif %}>Partially Paid</option>
-                                            <option value="overdue" {% if status_filter == "overdue" %} selected {% endif %}>Overdue</option> -->
+                                            
                                         </select>
                                     </div>
                                     <div class="d-flex px-2 mt-3 mb-4">
@@ -298,7 +286,7 @@
                         
                     <script>
                         function printSection(sectionId) {
-                            //document.body.style.backgroundColor = 'white';
+                            
                             var printContents = document.getElementById(sectionId).innerHTML;
                             var originalContents = document.body.innerHTML;
                             var $printerDiv = $('<div class="printContainer"></div>');
@@ -327,7 +315,7 @@
 
                  
                    
-                    <!-- price lists table -->
+                    
                     <div class="table-responsive " style="overflow-x:auto;margin-top: 20px;">
                         <div class="card radius-15 print-only" id="pdf-card" style="background-color: #000;" >
                             <div class="card-body">
@@ -337,7 +325,7 @@
                                         <div class="my-5 page" size="A4" >
                                             <div id="printdiv2">
                                                 <div class="py-4 bg-warning" >
-                                                    <!-- <div id="ember2512" class="col-md-4 d-flex justify-content-start tooltip-container ember-view ribbon text-ellipsis"></div> -->
+                                                  
                                                     <div class="col-12">
                                                             <center class="h5 text-white"><b>{{details.company_name}}</b></center>
                                                             <center class="h3 text-white"><b>RETAINER INVOICE DETAILS</b></center>
@@ -345,7 +333,7 @@
                                                             <center class="h6 text-white"><b>{{startDate}} TO {{endDate}}</b></center>
                                                             {% endif %}
                                                     </div>  
-                                                    <!-- <div class="col-md-4 d-flex justify-content-end"></div> -->
+                                                   
                                                 </div>
                                                 <div class="row px-1 py-1">
                                                     <div class="col-12">
@@ -356,11 +344,10 @@
                                                                     <tr>
                                                                         <th class="text-center">STATUS</th>
                                                                         <th class="text-center">RETAINER INVOICE DATE</th>
-                                                                        <!-- <th class="text-center">DUE DATE</th> -->
+                                                                        
                                                                         <th class="text-center">RETAINER INVOICE NUMBER</th>
                                                                         <th class="text-center">CUSTOMER NAME</th>
-                                                                        <!-- <th class="text-center">PURCHASE ORDER NO.</th> -->
-                                                                        <!-- <th class="text-center">AMOUNT</th> -->
+                                                                       
                                                                          <th class="text-center">AMOUNT</th>
                                                                     </tr>
                                                                 </thead>
@@ -369,11 +356,10 @@
                                                                     <tr>
                                                                         <td class="text-center">{{i.status}}</td>
                                                                         <td class="text-center">{{i.date}}</td>
-                                                                        <!-- <td class="text-center">{{i.ship_date}}</td> -->
+                                                                        
                                                                         <td class="text-center">{{i.rbill}}</td>
                                                                         <td class="text-center">{{i.name}}</td>
-                                                                        <!-- <td class="text-center">{{i.ordrno}}</td> -->
-                                                                        <!-- <td class="text-center">Rs. {{i.total|floatformat:2 }}</td>  -->
+                                                                       
                                                                          <td class="text-center">Rs. {{i.balance|floatformat:2 }}</td> 
 
                                                                     </tr>
@@ -393,12 +379,7 @@
                                                                         <div class="col-4">Total customer : <p style="font-size: 19px;">{{totcust|default:0}}</p>
                                                                         </div><br><br>
                                                                     </div>
-                                                                    <!-- <div class="row ">
-                                                                        <div class="col-4 "></div>
-                                                                        <div class="col-4"></div>
-                                                                        <div class="col-4" ><h5 style="; color: black; font-weight: bold;">Total Amount:</h5> 
-                                                                            <h4 class="text-dark" id="expense"  style="font-weight: 600;">Rs.<span id="totalCreditnote">{{totalSales|default:0|floatformat:2}}</span></h4></div>
-                                                                    </div> -->
+                                                                   
                                                                     
                                                 
                                                                 </div>
@@ -510,7 +491,7 @@
   <script>
       $(document).ready(function(){
         var trans = `{{transaction}}`;
-        // alert(trans)
+       
         if(trans != "" && trans != 'all'){
             $('#salesTransactions').val(trans)
         }
@@ -521,10 +502,7 @@
             contentDiv.style.display = "none";
         } else {
             contentDiv.style.display = "block";
-            // Position the div just below the button
-            // var buttonRect = event.target.getBoundingClientRect();
-            // contentDiv.style.top = (buttonRect.bottom + window.scrollY) + "px";
-            // contentDiv.style.left = buttonRect.left + "px";
+            
         }
     }
 
@@ -584,7 +562,7 @@
   <script>
       $(document).ready(function(){
         var trans = `{{transaction}}`;
-        // alert(trans)
+        
         if(trans != "" && trans != 'all'){
             $('#salesTransactions').val(trans)
         }
@@ -595,10 +573,7 @@
             contentDiv.style.display = "none";
         } else {
             contentDiv.style.display = "block";
-            // Position the div just below the button
-            // var buttonRect = event.target.getBoundingClientRect();
-            // contentDiv.style.top = (buttonRect.bottom + window.scrollY) + "px";
-            // contentDiv.style.left = buttonRect.left + "px";
+            
         }
     }
 
@@ -611,7 +586,7 @@
 <script>
     $(document).ready(function(){
         var stat = `{{status}}`;
-        // alert(trans)
+        
         if(stat != "" && stat != 'all'){
             $('#salesStatus').val(stat)
         }
@@ -627,7 +602,7 @@
     });
     $(document).ready(function(){
         var trans = `{{transaction}}`;
-        // alert(trans)
+       
         if(trans != "" && trans != 'all'){
             $('#salesTransactions').val(trans)
         }
@@ -638,10 +613,7 @@
             contentDiv.style.display = "none";
         } else {
             contentDiv.style.display = "block";
-            // Position the div just below the button
-            // var buttonRect = event.target.getBoundingClientRect();
-            // contentDiv.style.top = (buttonRect.bottom + window.scrollY) + "px";
-            // contentDiv.style.left = buttonRect.left + "px";
+          
         }
     }
 
@@ -690,7 +662,7 @@
                 
                 if(invalidEmails.length > 0){
                     alert('Invalid emails..Please check!\n'+invalidEmails)
-                    // alert(invalidEmails)
+                    
                 }else{
                     $('#share_to_email_form').submit();
                 }
@@ -716,7 +688,7 @@
     })
 
     
-    let sortOrder = false; // false for ascending, true for descending
+    let sortOrder = false; 
 
     function sortName(colIndex) {
     const table = document.getElementById('reportTable');
@@ -740,14 +712,14 @@
         }
     });
 
-    // Toggle arrow direction
+    
     const arrow = document.querySelector('.arrow');
     arrow.classList.toggle('up', sortOrder);
 
-    // Reorder the rows
+    
     rows.forEach(row => table.appendChild(row));
 
-    // Toggle sort order for the next click
+    
     sortOrder = !sortOrder;
     }
 
